@@ -84,8 +84,10 @@ header .cabecera .menuList .menuItem a {
 }
 
 .hero__textContainer {
-  height: 60vh; /* Alto del elemento */
-  margin: 20vh 0; /* Margen superior e inferior */
+  height: 70vh;
+  /* Alto del elemento */
+  margin: 15vh 0;
+  /* Margen superior e inferior */
 }
 .hero__textContainer h2 span {
   display: block;
@@ -146,19 +148,9 @@ header .cabecera .menuList .menuItem a {
   color: #fff;
 }
 
-.aboutContainer {
-  position: relative;
-  width: 100%;
-  height: 300px;
-  padding: 10px;
-  background-color: transparent;
-}
-.aboutContainer .about {
-  position: absolute;
-  top: 50%;
-  left: 15%;
-  min-height: 300px;
-  width: 70%;
+.about {
+  transform: translateY(50%);
+  min-height: fit-content;
   margin: auto;
   min-width: 250px;
   background-color: transparent;
@@ -168,27 +160,21 @@ header .cabecera .menuList .menuItem a {
   border-radius: 16px;
   box-shadow: 2px 2px 10px rgb(175, 175, 175);
 }
-@media screen and (max-width: 720px) {
-  .aboutContainer .about {
-    bottom: -300px;
-  }
-}
-.aboutContainer .about .about__imageContainer {
+.about .about__imageContainer {
   width: 30%;
   height: 100%;
   min-width: 200px;
   margin: auto;
   padding: 10px;
 }
-.aboutContainer .about .about__imageContainer img {
+.about .about__imageContainer img {
   margin: auto;
   width: 100%;
   border-radius: 50%;
   border: 6px solid rgb(120, 122, 186);
   box-shadow: 2px 2px 10px rgb(175, 175, 175);
 }
-.aboutContainer .about .about__description {
-  align-self: flex-end;
+.about .about__description {
   font-size: calc(16px + 2 * (100vw - 320px) / 1046);
   width: 60%;
   min-width: 250px;
@@ -200,7 +186,7 @@ header .cabecera .menuList .menuItem a {
   gap: 10px;
   margin: auto;
 }
-.aboutContainer .about .about__description .about__list {
+.about .about__description .about__list {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -208,8 +194,113 @@ header .cabecera .menuList .menuItem a {
   align-items: flex-start;
   gap: 10px;
 }
-.aboutContainer .about .about__description .about__list h6 {
+.about .about__description .about__list h6 {
   font-size: 1.5em;
+  text-align: center;
+}
+
+.servicios {
+  padding: 300px 0px;
+}
+.servicios .section__h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  opacity: 0.6;
+  font-size: calc(15px + 5 * (100vw - 300px) / 1000);
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: -20px;
+}
+.servicios .section__h2 {
+  font-size: calc(24px + 16 * (100vw - 300px) / 1000);
+  text-align: center;
+  margin-bottom: 64px;
+}
+.servicios .section__cardsContainer {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.servicios .section__cardsContainer .card {
+  position: relative;
+  min-width: 255px;
+  max-width: 255px;
+  min-height: 230px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgb(175, 175, 175);
+  border-radius: 16px;
+  display: block;
+  overflow: hidden;
+  transition: all 0.9s;
+  cursor: pointer;
+}
+.servicios .section__cardsContainer .card:hover .card__initialText {
+  transform: translateY(-25%) scale(0.6);
+}
+.servicios .section__cardsContainer .card:hover .card__detail__p {
+  transform: translateY(-130px);
+}
+.servicios .section__cardsContainer .card .card__initialText {
+  position: relative;
+  display: block;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+}
+.servicios .section__cardsContainer .card .card__image {
+  width: 100%;
+  padding: 10px;
+  height: 70%;
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  transition: all 0.4s;
+}
+.servicios .section__cardsContainer .card .card__text {
+  text-align: center;
+  position: relative;
+  display: block;
+  z-index: 1;
+  font-size: calc(14px + 4 * (100vw - 300px) / 1000);
+  color: rgb(120, 122, 186);
+  transition: all 0.4s;
+}
+.servicios .section__cardsContainer .card .card__desarrollo {
+  background-image: url(../multimedia/img/laptop-code.svg);
+}
+.servicios .section__cardsContainer .card .card__responsive {
+  background-image: url(../multimedia/img/devices-mobile.svg);
+}
+.servicios .section__cardsContainer .card .card__hosting {
+  background-image: url(../multimedia/img/global-intenet.svg);
+}
+.servicios .section__cardsContainer .card .card__soporte {
+  background-image: url(../multimedia/img/online-support.svg);
+}
+.servicios .section__cardsContainer .card .card__seo {
+  background-image: url(../multimedia/img/internet-magnifier-glass.svg);
+}
+.servicios .section__cardsContainer .card .card__actualizaciones {
+  background-image: url(../multimedia/img/refresh.svg);
+}
+.servicios .section__cardsContainer .card .card__capacitacion {
+  background-image: url(../multimedia/img/graduation-hat.svg);
+}
+.servicios .section__cardsContainer .card .card__detail {
+  display: block;
+  justify-content: center;
+  transition: all 0.4s;
+  width: 100%;
+  height: 130px;
+}
+.servicios .section__cardsContainer .card .card__detail .card__detail__p {
+  padding: 10px;
+  font-size: calc(12px + 4 * (100vw - 300px) / 1000);
+  transition: all 0.4s;
+  margin: auto;
   text-align: center;
 }
 
